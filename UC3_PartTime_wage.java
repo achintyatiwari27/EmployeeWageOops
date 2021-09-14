@@ -1,10 +1,10 @@
 package com.BridgeLabz;
 
 public class EmpWage {
-    public static int check=(int)(Math.random()*2);
+    public static int check=(int)(Math.random()*3);
     public static void main(String[] args) {
         System.out.println("Welcome to Employee Wage Computation !");
-        int check=(int)(Math.random()*2);
+        int check=(int)(Math.random()*3);
         EmployeePresentOrAbsent();
         dailyEmployeeWage();
     }
@@ -14,20 +14,26 @@ public class EmpWage {
 
         if(check == 1)
             System.out.println("Employee is present");
+        else if (check == 2)
+            System.out.println("Employee is part time");
         else
             System.out.println("Employee is absent");
     }
 
-    public static void dailyEmployeeWage()
-    {
+    public static void dailyEmployeeWage() {
         int WAGE_PER_HOUR = 20;
         int FULL_DAY_HOUR = 8;
+        int PART_TIME_HOUR = 4;
         System.out.println("\nCheck the employee daily wage:");
         int fullpresent = WAGE_PER_HOUR * FULL_DAY_HOUR;
+        int partTime = WAGE_PER_HOUR * PART_TIME_HOUR;
         if (check == 1) {
             System.out.println("\n Employee is present for full day, the salary is " + fullpresent);
-        } else
-            System.out.println("\n  Employee is absent so there wil be no generation of salary");
+        } else if (check == 2) {
+            System.out.println("\n  Employee is present part time, the salary is " + partTime);
+        } else {
+            System.out.println("Employee is absent so there wil be no generation of salary");
+        }
     }
 }
 
